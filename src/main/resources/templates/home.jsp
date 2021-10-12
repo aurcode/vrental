@@ -3,7 +3,7 @@
     <body>
         <div class="container">
             <div class="jumbotron">
-                <h3 th:text="'Bienvenido ' + ${name} + ' ' + ${last_name}"></h3>
+                <h3 th:text="${name}"></h3>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
