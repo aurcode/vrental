@@ -4,15 +4,18 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table( name = "vehicle_type" )
-public class VehicleType implements Serializable {
+@Table( name = "rent_order" )
+public class RentOrder implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
-    @Column(name = "type")
-    private String type;
+    
+    @Column(name = "id_vehicle")
+    private Long idVehicle;
+    
+    @Column(name = "id_client")
+    private Long idClient;
 
     @Column(name = "deleted")
     private int deleted;
@@ -32,17 +35,31 @@ public class VehicleType implements Serializable {
     }
 
     /**
-     * @return String return the type
+     * @return Long return the idVehicle
      */
-    public String getType() {
-        return type;
+    public Long getIdVehicle() {
+        return idVehicle;
     }
 
     /**
-     * @param type the type to set
+     * @param idVehicle the idVehicle to set
      */
-    public void setType(String type) {
-        this.type = type;
+    public void setIdVehicle(Long idVehicle) {
+        this.idVehicle = idVehicle;
+    }
+
+    /**
+     * @return Long return the idClient
+     */
+    public Long getIdClient() {
+        return idClient;
+    }
+
+    /**
+     * @param idClient the idClient to set
+     */
+    public void setIdClient(Long idClient) {
+        this.idClient = idClient;
     }
 
     /**
@@ -57,11 +74,6 @@ public class VehicleType implements Serializable {
      */
     public void setDeleted(int deleted) {
         this.deleted = deleted;
-    }
-
-    @Override
-    public String toString() {
-        return  id + ". " + type;
     }
 
 }

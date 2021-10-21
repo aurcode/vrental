@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table( name = "vehicle_type" )
-public class VehicleType implements Serializable {
+@Table( name = "license_type" )
+public class LicenseType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -57,11 +57,6 @@ public class VehicleType implements Serializable {
      */
     public void setDeleted(int deleted) {
         this.deleted = deleted;
-    }
-
-    @Override
-    public String toString() {
-        return  id + ". " + type;
     }
 
 }

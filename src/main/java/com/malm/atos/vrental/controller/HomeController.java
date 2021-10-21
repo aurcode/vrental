@@ -1,7 +1,10 @@
 package com.malm.atos.vrental.controller;
 
+import com.malm.atos.vrental.entity.Client;
 import com.malm.atos.vrental.entity.VehiclePrice;
+import com.malm.atos.vrental.service.ClientService;
 import com.malm.atos.vrental.service.VehiclePriceService;
+import com.malm.atos.vrental.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,12 +17,11 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    private VehiclePriceService vehiclePriceService;
+    private VehicleService vehicleService;
 
     @GetMapping(value = "/")
     public String home(Model model){
-        List<VehiclePrice> vehiclePrices = vehiclePriceService.getAll();
-        model.addAttribute("name", StringUtils.join(vehiclePrices, "  ") );
+        model.addAttribute("vehicles", vehicleService.getAll());
         return "home";
     }
 
