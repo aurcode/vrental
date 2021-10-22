@@ -11,11 +11,13 @@ public class LicenseDriver implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "id_client")
-    private Long idClient;
+    @ManyToOne
+    @JoinColumn(name = "id_client")
+    private Client idClient;
 
-    @Column(name = "id_license_type")
-    private Long idLicenseType;
+    @ManyToOne
+    @JoinColumn(name = "id_license_type")
+    private LicenseType idLicenseType;
 
     @Column(name = "issue_date") // Datetime
     private String issueDate;
@@ -41,30 +43,30 @@ public class LicenseDriver implements Serializable {
     }
 
     /**
-     * @return Long return the idClient
+     * @return Client return the idClient
      */
-    public Long getIdClient() {
+    public Client getIdClient() {
         return idClient;
     }
 
     /**
      * @param idClient the idClient to set
      */
-    public void setIdClient(Long idClient) {
+    public void setIdClient(Client idClient) {
         this.idClient = idClient;
     }
 
     /**
-     * @return Long return the idLicenseType
+     * @return LicenseType return the idLicenseType
      */
-    public Long getidLicenseType() {
+    public LicenseType getidLicenseType() {
         return idLicenseType;
     }
 
     /**
      * @param idLicenseType the idLicenseType to set
      */
-    public void setidLicenseType(Long idLicenseType) {
+    public void setidLicenseType(LicenseType idLicenseType) {
         this.idLicenseType = idLicenseType;
     }
 

@@ -1,10 +1,13 @@
 package com.malm.atos.vrental.DTO;
 
+import com.malm.atos.vrental.entity.VehiclePrice;
+import com.malm.atos.vrental.entity.VehicleType;
+
 public class VehicleDTO {
     private Long id;
     private String plateNumber;
-    private Long idVehicleType;
-    private Long idVehiclePrice;
+    private VehicleType idVehicleType;
+    private VehiclePrice idVehiclePrice;
     private int deleted;
 
     /**
@@ -36,30 +39,30 @@ public class VehicleDTO {
     }
 
     /**
-     * @return Long return the idVehicleType
+     * @return VehicleType return the idVehicleType
      */
-    public Long getIdVehicleType() {
+    public VehicleType getIdVehicleType() {
         return idVehicleType;
     }
 
     /**
      * @param idVehicleType the idVehicleType to set
      */
-    public void setIdVehicleType(Long idVehicleType) {
+    public void setIdVehicleType(VehicleType idVehicleType) {
         this.idVehicleType = idVehicleType;
     }
 
     /**
-     * @return Long return the idVehiclePrice
+     * @return VehiclePrice return the idVehiclePrice
      */
-    public Long getIdVehiclePrice() {
+    public VehiclePrice getIdVehiclePrice() {
         return idVehiclePrice;
     }
 
     /**
      * @param idVehiclePrice the idVehiclePrice to set
      */
-    public void setIdVehiclePrice(Long idVehiclePrice) {
+    public void setIdVehiclePrice(VehiclePrice idVehiclePrice) {
         this.idVehiclePrice = idVehiclePrice;
     }
 

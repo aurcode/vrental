@@ -1,9 +1,12 @@
 package com.malm.atos.vrental.DTO;
 
+import com.malm.atos.vrental.entity.Client;
+import com.malm.atos.vrental.entity.LicenseType;
+
 public class LicenseDriverDTO {
     private Long id;
-    private Long idClient;
-    private Long idLicenseType;
+    private Client idClient;
+    private LicenseType idLicenseType;
     private String issueDate;
     private String expire;
     private int deleted;
@@ -23,30 +26,30 @@ public class LicenseDriverDTO {
     }
 
     /**
-     * @return Long return the idClient
+     * @return Client return the idClient
      */
-    public Long getIdClient() {
+    public Client getIdClient() {
         return idClient;
     }
 
     /**
      * @param idClient the idClient to set
      */
-    public void setIdClient(Long idClient) {
+    public void setIdClient(Client idClient) {
         this.idClient = idClient;
     }
 
     /**
-     * @return Long return the idLicenseType
+     * @return LicenseType return the idLicenseType
      */
-    public Long getidLicenseType() {
+    public LicenseType getidLicenseType() {
         return idLicenseType;
     }
 
     /**
      * @param idLicenseType the idLicenseType to set
      */
-    public void setidLicenseType(Long idLicenseType) {
+    public void setidLicenseType(LicenseType idLicenseType) {
         this.idLicenseType = idLicenseType;
     }
 

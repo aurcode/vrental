@@ -1,9 +1,12 @@
 package com.malm.atos.vrental.DTO;
 
+import com.malm.atos.vrental.entity.Client;
+import com.malm.atos.vrental.entity.Vehicle;
+
 public class RentOrderDTO {
     private Long id;
-    private Long idVehicle;
-    private Long idClient;
+    private Vehicle idVehicle;
+    private Client idClient;
     private int deleted;
 
     /**
@@ -21,30 +24,30 @@ public class RentOrderDTO {
     }
 
     /**
-     * @return Long return the idVehicle
+     * @return Vehicle return the idVehicle
      */
-    public Long getIdVehicle() {
+    public Vehicle getIdVehicle() {
         return idVehicle;
     }
 
     /**
      * @param idVehicle the idVehicle to set
      */
-    public void setIdVehicle(Long idVehicle) {
+    public void setIdVehicle(Vehicle idVehicle) {
         this.idVehicle = idVehicle;
     }
 
     /**
-     * @return Long return the idClient
+     * @return Client return the idClient
      */
-    public Long getIdClient() {
+    public Client getIdClient() {
         return idClient;
     }
 
     /**
      * @param idClient the idClient to set
      */
-    public void setIdClient(Long idClient) {
+    public void setIdClient(Client idClient) {
         this.idClient = idClient;
     }
 

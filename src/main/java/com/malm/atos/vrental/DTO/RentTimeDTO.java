@@ -1,8 +1,10 @@
 package com.malm.atos.vrental.DTO;
 
+import com.malm.atos.vrental.entity.RentOrder;
+
 public class RentTimeDTO {
     private Long id;
-    private Long idRentOrder;
+    private RentOrder idRentOrder;
     private String startRent;
     private String rentLimit;
     private String returnVehicle;
@@ -24,16 +26,16 @@ public class RentTimeDTO {
     }
 
     /**
-     * @return Long return the idRentOrder
+     * @return RentOrder return the idRentOrder
      */
-    public Long getIdRentOrder() {
+    public RentOrder getIdRentOrder() {
         return idRentOrder;
     }
 
     /**
      * @param idRentOrder the idRentOrder to set
      */
-    public void setIdRentOrder(Long idRentOrder) {
+    public void setIdRentOrder(RentOrder idRentOrder) {
         this.idRentOrder = idRentOrder;
     }
 

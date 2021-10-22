@@ -10,12 +10,14 @@ public class RentOrder implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    
-    @Column(name = "id_vehicle")
-    private Long idVehicle;
-    
-    @Column(name = "id_client")
-    private Long idClient;
+
+    @ManyToOne
+    @JoinColumn(name = "id_vehicle")
+    private Vehicle idVehicle;
+
+    @ManyToOne
+    @JoinColumn(name = "id_client")
+    private Client idClient;
 
     @Column(name = "deleted")
     private int deleted;
@@ -35,30 +37,30 @@ public class RentOrder implements Serializable {
     }
 
     /**
-     * @return Long return the idVehicle
+     * @return Vehicle return the idVehicle
      */
-    public Long getIdVehicle() {
+    public Vehicle getIdVehicle() {
         return idVehicle;
     }
 
     /**
      * @param idVehicle the idVehicle to set
      */
-    public void setIdVehicle(Long idVehicle) {
+    public void setIdVehicle(Vehicle idVehicle) {
         this.idVehicle = idVehicle;
     }
 
     /**
-     * @return Long return the idClient
+     * @return Client return the idClient
      */
-    public Long getIdClient() {
+    public Client getIdClient() {
         return idClient;
     }
 
     /**
      * @param idClient the idClient to set
      */
-    public void setIdClient(Long idClient) {
+    public void setIdClient(Client idClient) {
         this.idClient = idClient;
     }
 

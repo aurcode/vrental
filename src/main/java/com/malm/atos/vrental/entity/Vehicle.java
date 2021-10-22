@@ -14,11 +14,13 @@ public class Vehicle implements Serializable {
     @Column(name = "plate_number")
     private String plateNumber;
 
-    @Column(name = "id_vehicle_type")
-    private Long idVehicleType;
+    @ManyToOne
+    @JoinColumn(name = "id_vehicle_type")
+    private VehicleType idVehicleType;
 
-    @Column(name = "id_vehicle_price")
-    private Long idVehiclePrice;
+    @OneToOne
+    @JoinColumn(name = "id_vehicle_price")
+    private VehiclePrice idVehiclePrice;
 
     @Column(name = "deleted")
     private int deleted;
@@ -52,30 +54,30 @@ public class Vehicle implements Serializable {
     }
 
     /**
-     * @return Long return the idVehicleType
+     * @return VehicleType return the idVehicleType
      */
-    public Long getIdVehicleType() {
+    public VehicleType getIdVehicleType() {
         return idVehicleType;
     }
 
     /**
      * @param idVehicleType the idVehicleType to set
      */
-    public void setIdVehicleType(Long idVehicleType) {
+    public void setIdVehicleType(VehicleType idVehicleType) {
         this.idVehicleType = idVehicleType;
     }
 
     /**
-     * @return Long return the idVehiclePrice
+     * @return VehiclePrice return the idVehiclePrice
      */
-    public Long getIdVehiclePrice() {
+    public VehiclePrice getIdVehiclePrice() {
         return idVehiclePrice;
     }
 
     /**
      * @param idVehiclePrice the idVehiclePrice to set
      */
-    public void setIdVehiclePrice(Long idVehiclePrice) {
+    public void setIdVehiclePrice(VehiclePrice idVehiclePrice) {
         this.idVehiclePrice = idVehiclePrice;
     }
 

@@ -20,20 +20,13 @@ public class ClientController {
 
     @GetMapping( value = "/profile")
     public String profile(Model model) {
-        System.out.printf("");
-        System.out.printf("I'm in profile uwu");
-        System.out.printf("");
         model.addAttribute("client", new ClientDTO());
         return "clientprofile";
     }
 
     @PostMapping(value = "/save")
     public ModelAndView save(ClientDTO client, BindingResult bindingResult) {
-        System.out.printf("");
-        System.out.printf("");
         System.out.printf(client.toString());
-        System.out.printf("");
-        System.out.printf("");
         if (bindingResult.hasErrors()) {
             return new ModelAndView("clientprofile");
         }

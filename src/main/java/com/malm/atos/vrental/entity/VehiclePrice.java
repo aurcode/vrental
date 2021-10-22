@@ -12,16 +12,16 @@ public class VehiclePrice implements Serializable {
     private Long id;
 
     @Column(name = "price_per_day")
-    private Long price_per_day;
+    private Double price_per_day;
 
     @Column(name = "price_per_week")
-    private Long price_per_week;
+    private Double price_per_week;
 
     @Column(name = "price_per_month")
-    private Long price_per_month;
+    private Double price_per_month;
 
     @Column(name = "insurance_price")
-    private Long insurance_price;
+    private Double insurance_price;
 
     @Column(name = "deleted")
     private int deleted;
@@ -41,58 +41,58 @@ public class VehiclePrice implements Serializable {
     }
 
     /**
-     * @return Long return the price_per_day
+     * @return Double return the price_per_day
      */
-    public Long getPrice_per_day() {
+    public Double getPrice_per_day() {
         return price_per_day;
     }
 
     /**
      * @param price_per_day the price_per_day to set
      */
-    public void setPrice_per_day(Long price_per_day) {
+    public void setPrice_per_day(Double price_per_day) {
         this.price_per_day = price_per_day;
     }
 
     /**
-     * @return Long return the price_per_week
+     * @return Double return the price_per_week
      */
-    public Long getPrice_per_week() {
+    public Double getPrice_per_week() {
         return price_per_week;
     }
 
     /**
      * @param price_per_week the price_per_week to set
      */
-    public void setPrice_per_week(Long price_per_week) {
+    public void setPrice_per_week(Double price_per_week) {
         this.price_per_week = price_per_week;
     }
 
     /**
-     * @return Long return the price_per_month
+     * @return Double return the price_per_month
      */
-    public Long getPrice_per_month() {
+    public Double getPrice_per_month() {
         return price_per_month;
     }
 
     /**
      * @param price_per_month the price_per_month to set
      */
-    public void setPrice_per_month(Long price_per_month) {
+    public void setPrice_per_month(Double price_per_month) {
         this.price_per_month = price_per_month;
     }
 
     /**
-     * @return Long return the insurance_price
+     * @return Double return the insurance_price
      */
-    public Long getInsurance_price() {
+    public Double getInsurance_price() {
         return insurance_price;
     }
 
     /**
      * @param insurance_price the insurance_price to set
      */
-    public void setInsurance_price(Long insurance_price) {
+    public void setInsurance_price(Double insurance_price) {
         this.insurance_price = insurance_price;
     }
 

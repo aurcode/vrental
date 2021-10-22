@@ -11,8 +11,9 @@ public class RentTime implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "id_rent_order")
-    private Long idRentOrder;
+    @OneToOne
+    @JoinColumn(name = "id_rent_order")
+    private RentOrder idRentOrder;
 
     @Column(name = "start_rent") // DATETIME
     private String startRent;
@@ -44,16 +45,16 @@ public class RentTime implements Serializable {
     }
 
     /**
-     * @return Long return the idRentOrder
+     * @return RentOrder return the idRentOrder
      */
-    public Long getIdRentOrder() {
+    public RentOrder getIdRentOrder() {
         return idRentOrder;
     }
 
     /**
      * @param idRentOrder the idRentOrder to set
      */
-    public void setIdRentOrder(Long idRentOrder) {
+    public void setIdRentOrder(RentOrder idRentOrder) {
         this.idRentOrder = idRentOrder;
     }
 

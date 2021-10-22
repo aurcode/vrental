@@ -14,13 +14,15 @@
                 <thead>
                 <tr>
                     <th>plateNumber</th>
-                    <th>idVehicleType</th>
+                    <th>Type</th>
+                    <th>Price</th>
                 </tr>
                 </thead>
                 <tbody>
                     <tr th:each="vehicle: ${vehicles}">
                         <td th:text="${vehicle.plateNumber}"></td>
-                        <td th:text="${vehicle.idVehicleType}"></td>
+                        <td th:text="${vehicle.idVehicleType.type}"></td>
+                        <td th:text="${vehicle.idVehiclePrice.price_per_day}"></td>
                     </tr>
                 </tbody>
             </table>

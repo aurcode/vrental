@@ -11,17 +11,19 @@ public class VehicleDetails implements Serializable {
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "id_vehicle")
-    private Long idVehicle;
+    @ManyToOne
+    @JoinColumn(name = "id_vehicle")
+    private Vehicle idVehicle;
 
-    @Column(name = "id_rent_order")
-    private Long idRentOrder;
+    @ManyToOne
+    @JoinColumn(name = "id_rent_order")
+    private RentOrder idRentOrder;
 
     @Column(name = "detail")
     private String detail;
 
     @Column(name = "amount")
-    private Long amount;
+    private Double amount;
 
     @Column(name = "status")
     private int status;
@@ -44,30 +46,30 @@ public class VehicleDetails implements Serializable {
     }
 
     /**
-     * @return Long return the idVehicle
+     * @return Vehicle return the idVehicle
      */
-    public Long getIdVehicle() {
+    public Vehicle getIdVehicle() {
         return idVehicle;
     }
 
     /**
      * @param idVehicle the idVehicle to set
      */
-    public void setIdVehicle(Long idVehicle) {
+    public void setIdVehicle(Vehicle idVehicle) {
         this.idVehicle = idVehicle;
     }
 
     /**
-     * @return Long return the idRentOrder
+     * @return RentOrder return the idRentOrder
      */
-    public Long getIdRentOrder() {
+    public RentOrder getIdRentOrder() {
         return idRentOrder;
     }
 
     /**
      * @param idRentOrder the idRentOrder to set
      */
-    public void setIdRentOrder(Long idRentOrder) {
+    public void setIdRentOrder(RentOrder idRentOrder) {
         this.idRentOrder = idRentOrder;
     }
 
@@ -86,16 +88,16 @@ public class VehicleDetails implements Serializable {
     }
 
     /**
-     * @return Long return the amount
+     * @return Double return the amount
      */
-    public Long getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
     /**
      * @param amount the amount to set
      */
-    public void setAmount(Long amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

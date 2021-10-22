@@ -1,11 +1,14 @@
 package com.malm.atos.vrental.DTO;
 
+import com.malm.atos.vrental.entity.RentOrder;
+import com.malm.atos.vrental.entity.Vehicle;
+
 public class VehicleDetailsDTO {
     private Long id;
-    private Long idVehicle;
-    private Long idRentOrder;
+    private Vehicle idVehicle;
+    private RentOrder idRentOrder;
     private String detail;
-    private Long amount;
+    private Double amount;
     private int status;
     private int deleted;
 
@@ -24,30 +27,30 @@ public class VehicleDetailsDTO {
     }
 
     /**
-     * @return Long return the idVehicle
+     * @return Vehicle return the idVehicle
      */
-    public Long getIdVehicle() {
+    public Vehicle getIdVehicle() {
         return idVehicle;
     }
 
     /**
      * @param idVehicle the idVehicle to set
      */
-    public void setIdVehicle(Long idVehicle) {
+    public void setIdVehicle(Vehicle idVehicle) {
         this.idVehicle = idVehicle;
     }
 
     /**
-     * @return Long return the idRentOrder
+     * @return RentOrder return the idRentOrder
      */
-    public Long getIdRentOrder() {
+    public RentOrder getIdRentOrder() {
         return idRentOrder;
     }
 
     /**
      * @param idRentOrder the idRentOrder to set
      */
-    public void setIdRentOrder(Long idRentOrder) {
+    public void setIdRentOrder(RentOrder idRentOrder) {
         this.idRentOrder = idRentOrder;
     }
 
@@ -66,16 +69,16 @@ public class VehicleDetailsDTO {
     }
 
     /**
-     * @return Long return the amount
+     * @return Double return the amount
      */
-    public Long getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
     /**
      * @param amount the amount to set
      */
-    public void setAmount(Long amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 
