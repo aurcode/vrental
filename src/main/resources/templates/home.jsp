@@ -8,6 +8,7 @@
         <div class="text-center">
             <h1 >Bienvenidos a Vrental</h1>
             <h3>La mejor pagina para alquilar tus vehiculos</h3>
+            <a class="btn btn-primary" href="/clients/" role="button">Ver lista de clientes</a>
         </div>
         <div class="table-responsive">
             <table class="table">
