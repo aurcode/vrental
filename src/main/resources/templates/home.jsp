@@ -10,23 +10,5 @@
             <h3>La mejor pagina para alquilar tus vehiculos</h3>
             <a class="btn btn-primary" href="/clients/" role="button">Ver lista de clientes</a>
         </div>
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>plateNumber</th>
-                    <th>Type</th>
-                    <th>Price</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="vehicle: ${vehicles}">
-                        <td th:text="${vehicle.plateNumber}"></td>
-                        <td th:text="${vehicle.idVehicleType.type}"></td>
-                        <td th:text="${vehicle.idVehiclePrice.price_per_day}"></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
     </body>
 </html>

@@ -31,4 +31,9 @@ public class ClientServiceImpl implements ClientService {
         client.setDeleted(clientDTO.getDeleted());
         clientRepository.save(client);
     }
+
+    @Override
+    public void delete(Long id) {
+        clientRepository.deleteById(id);
+    }
 }

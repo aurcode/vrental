@@ -30,8 +30,11 @@
                         <td th:text="${client.lastName}"></td>
                         <td th:text="${client.phone}"></td>
                         <td th:text="${client.address}"></td>
-                        <td><a class="btn btn-warning" href="#" role="button">Editar</a></td>
-                        <td><a class="btn btn-danger" href="#" role="button">Eliminar</a></td>
+                        <td><a class="btn btn-warning" th:href="${client.id}" role="button">Editar</a></td>
+                        <a th:href="@{/order/details/{${client.id}}}">
+                        <td><form action="#" th:action="@{/clients/(${client.id})}" method="delete">
+                            <button type="submit">Eliminar</button>
+                        </form></td>
                     </tr>
                 </tbody>
             </table>

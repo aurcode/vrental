@@ -8,4 +8,5 @@ import java.util.List;
 public interface ClientService {
     List<Client> getAll();
     void save(ClientDTO client);
+    void delete(Long id);
 }
