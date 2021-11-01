@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  my-db-service:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: super-root-password
+      MYSQL_USER: my-user
+      MYSQL_PASSWORD: my-user-password
+      MYSQL_DATABASE: vrental
+    ports:
+      - 3306:3306
+    volumes:
+      - ./db/data:/var/lib/mysql
+      - ./db/mycustom.cnf:/etc/mysql/conf.d/custom.cnf
