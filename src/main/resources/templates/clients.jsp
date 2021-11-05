@@ -32,7 +32,7 @@
                         <td th:text="${client.phone}"></td>
                         <td th:text="${client.address}"></td>
                         <td><form action="#" th:action="@{/clients/edit/{id}(id=${client.id})}">
-                            <button class="btn btn-warning" type="submit">Delete</button>
+                            <button class="btn btn-warning" type="submit">Editar</button>
                         </form></td>
                         <td><form action="#" th:action="@{/clients/delete/{id}(id=${client.id})}">
                             <button class="btn btn-danger" type="submit">Eliminar</button>
@@ -41,7 +41,7 @@
                     </tr>
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="/clients/profile" role="button">Agregar nuevo cliente</a>
+            <a class="btn btn-primary" href="/clients/new" role="button">Agregar nuevo cliente</a>
         </div>
     </body>
 </html>

@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface ClientService {
     List<Client> getAll();
+    Client getById(Long id);
     void save(ClientDTO client);
     void delete(Long id);
+    void put(ClientDTO clientDTO, Long id);
 }

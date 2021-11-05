@@ -1,8 +1,6 @@
 package com.malm.atos.vrental.controller;
 
-import com.malm.atos.vrental.DAO.ClientRepository;
 import com.malm.atos.vrental.DTO.ClientDTO;
-import com.malm.atos.vrental.entity.Client;
 import com.malm.atos.vrental.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,8 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import static org.springframework.http.HttpStatus.NOT_FOUND;
 
 @Controller
 @RequestMapping("/clients")
@@ -26,10 +22,19 @@ public class ClientController {
         return "clients";
     }
 
-    @PutMapping( value="/{id}" )
-    public void put(@PathVariable long id, @RequestBody ClientDTO clientDTO) {
-        Client client = new Client();
-        //return None;
+    @GetMapping( value = "/new")
+    public String profile(Model model) {
+        model.addAttribute("client", new ClientDTO());
+        return "clientprofile";
+    }
+
+    @PostMapping(value = "/new")
+    public ModelAndView save(ClientDTO client, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return new ModelAndView("clientprofile");
+        }
+        clientService.save(client);
+        return new ModelAndView("redirect:/clients/");
     }
 
     @GetMapping(path="/delete/{id}")
@@ -38,19 +43,18 @@ public class ClientController {
         return new ModelAndView("redirect:/clients/");
     }
 
-    @GetMapping( value = "/profile")
-    public String profile(Model model) {
-        model.addAttribute("client", new ClientDTO());
-        return "clientprofile";
+    @GetMapping(path="/edit/{id}")
+    public String editor(@PathVariable long id, Model model) {
+        model.addAttribute("client", clientService.getById(id));
+        return "client";
     }
 
-    @PostMapping(value = "/save")
-    public ModelAndView save(ClientDTO client, BindingResult bindingResult) {
-        System.out.printf(client.toString());
+    @PostMapping(value = "/edit/{id}")
+    public ModelAndView put(ClientDTO client, BindingResult bindingResult, @PathVariable long id) {
         if (bindingResult.hasErrors()) {
-            return new ModelAndView("clientprofile");
+            return new ModelAndView("client");
         }
-        clientService.save(client);
-        return new ModelAndView("redirect:/");
+        clientService.put(client, id);
+        return new ModelAndView("redirect:/clients/");
     }
 }

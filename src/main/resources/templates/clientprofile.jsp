@@ -2,15 +2,15 @@
 <html>
 <head>
     <meta charset="ISO-8859-1">
-    <title>Perfil</title>
+    <title>Creador de clientes</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 <body>
-<h1>title</h1>
+<h1>Crear nuevo cliente</h1>
 <div class="container">
     <div class="row">
         <div class="col">
-            <form action="#" th:action="@{/clients/save}" th:object="${client}" method="post">
+            <form action="#" th:action="@{/clients/new}" th:object="${client}" method="post">
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" class="form-control"
@@ -42,7 +42,7 @@
                     <p class="alert alert-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
                 </div>
                 <tr>
-                    <button type="submit">Guardar</button>
+                    <button class="btn btn-success" type="submit">Guardar</button>
                 </tr>
 
             </form>
