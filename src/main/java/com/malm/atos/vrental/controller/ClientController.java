@@ -32,35 +32,10 @@ public class ClientController {
         //return None;
     }
 
-    @Autowired
-    private ClientRepository clientRepository;
-
-    @DeleteMapping("/")
-    public ModelAndView deleteHome(ClientDTO client, BindingResult bindingResult) {
-        //clientRepository.deleteById(id);
-        System.out.printf(client.toString());
-        clientRepository.deleteById(client.getId());
-        return new ModelAndView("clients");
-    }
-
-    @DeleteMapping("/{id}")
+    @GetMapping(path="/delete/{id}")
     public ModelAndView delete(@PathVariable long id) {
-        System.out.printf("I'm here", id);
         clientService.delete(id);
-        return new ModelAndView("redirect:/clients");
-    }
-
-    @GetMapping( path="/{id}" )
-    public String getStudent(@PathVariable long id, Model model) {
-        model.addAttribute("client", clientRepository.findById(id).orElseThrow(ClientNotFoundException::new));
-        return "client"; //clientRepository.findById(id).orElseThrow(ClientNotFoundException::new);
-    }
-
-    @ResponseStatus(NOT_FOUND)
-    public class ClientNotFoundException extends RuntimeException {
-        public ClientNotFoundException() {
-            super();
-        }
+        return new ModelAndView("redirect:/clients/");
     }
 
     @GetMapping( value = "/profile")

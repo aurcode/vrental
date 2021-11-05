@@ -20,6 +20,7 @@
                     <th>address</th>
                     <th>Modificar</th>
                     <th>Eliminar</th>
+                    <th>Deleted</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -30,11 +31,13 @@
                         <td th:text="${client.lastName}"></td>
                         <td th:text="${client.phone}"></td>
                         <td th:text="${client.address}"></td>
-                        <td><a class="btn btn-warning" th:href="${client.id}" role="button">Editar</a></td>
-                        <a th:href="@{/order/details/{${client.id}}}">
-                        <td><form action="#" th:action="@{/clients/(${client.id})}" method="delete">
-                            <button type="submit">Eliminar</button>
+                        <td><form action="#" th:action="@{/clients/edit/{id}(id=${client.id})}">
+                            <button class="btn btn-warning" type="submit">Delete</button>
                         </form></td>
+                        <td><form action="#" th:action="@{/clients/delete/{id}(id=${client.id})}">
+                            <button class="btn btn-danger" type="submit">Eliminar</button>
+                        </form></td>
+                        <td th:text="${client.deleted}"></td>
                     </tr>
                 </tbody>
             </table>
