@@ -9,6 +9,7 @@
             <h1 >Bienvenidos a Vrental</h1>
             <h3>La mejor pagina para alquilar tus vehiculos</h3>
             <a class="btn btn-primary" href="/clients/" role="button">Ver lista de clientes</a>
+            <a class="btn btn-primary" href="/licensetypes/" role="button">Ver lista de tipos de licencia</a>
         </div>
     </body>
 </html>
