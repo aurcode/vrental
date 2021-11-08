@@ -42,6 +42,7 @@
                 </tbody>
             </table>
             <a class="btn btn-primary" href="/clients/new" role="button">Agregar nuevo cliente</a>
+            <a class="btn btn-secondary" href="/" role="button">Regresar</a>
         </div>
     </body>
 </html>

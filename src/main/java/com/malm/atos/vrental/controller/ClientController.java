@@ -25,13 +25,13 @@ public class ClientController {
     @GetMapping( value = "/new")
     public String profile(Model model) {
         model.addAttribute("client", new ClientDTO());
-        return "clientprofile";
+        return "clientcreator";
     }
 
     @PostMapping(value = "/new")
     public ModelAndView save(ClientDTO client, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
-            return new ModelAndView("clientprofile");
+            return new ModelAndView("clientcreator");
         }
         clientService.save(client);
         return new ModelAndView("redirect:/clients/");
@@ -46,13 +46,13 @@ public class ClientController {
     @GetMapping(path="/edit/{id}")
     public String editor(@PathVariable long id, Model model) {
         model.addAttribute("client", clientService.getById(id));
-        return "client";
+        return "clienteditor";
     }
 
     @PostMapping(value = "/edit/{id}")
     public ModelAndView put(ClientDTO client, BindingResult bindingResult, @PathVariable long id) {
         if (bindingResult.hasErrors()) {
-            return new ModelAndView("client");
+            return new ModelAndView("clienteditor");
         }
         clientService.put(client, id);
         return new ModelAndView("redirect:/clients/");
